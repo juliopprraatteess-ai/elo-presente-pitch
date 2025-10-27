@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketplace - Elo Presente</title>
+    <style>
+        /* Estilos CSS para o visual do app */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #eaf8f4; /* Fundo verde claro e suave */
+            color: #4a4a4a;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 650px;
+            text-align: center;
+        }
+        h1 {
+            color: #2e8b57; /* Verde floresta escuro */
+            font-size: 2.2em;
+            margin-bottom: 20px;
+        }
+        .form-section {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 25px;
+            text-align: left;
+        }
+        label {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #555;
+            margin-bottom: 8px;
+        }
+        input[type="text"],
+        input[type="url"],
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #b2d8bb; /* Borda em tom de verde mais suave */
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 1em;
+        }
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        button {
+            background-color: #f39c12; /* Laranja vibrante/dourado */
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #e67e22;
+        }
+        #confirmacao {
+            display: none;
+            padding: 20px;
+            background-color: #fffacd; /* Amarelo bem claro para destaque */
+            color: #9c6c13; /* Dourado escuro para o texto */
+            border: 1px solid #f39c12;
+            border-radius: 8px;
+            text-align: center;
+        }
+        #confirmacao h2 {
+            margin-top: 0;
+            color: #9c6c13;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div id="formulario-negocio">
+        <h1>Marketplace para Negócios Locais</h1>
+        <p>Cadastre seu negócio para impulsionar a recuperação econômica.</p>
+        
+        <form id="formNegocio">
+            <div class="form-section">
+                <label for="nomeNegocio">Nome do Negócio:</label>
+                <input type="text" id="nomeNegocio" name="nomeNegocio" placeholder="Nome da sua loja, serviço ou produto" required>
+            </div>
+            
+            <div class="form-section">
+                <label for="contatoNegocio">Contato (WhatsApp, Telefone ou E-mail):</label>
+                <input type="text" id="contatoNegocio" name="contatoNegocio" placeholder="Seu contato principal" required>
+            </div>
+            
+            <div class="form-section">
+                <label for="descricaoNegocio">O que você oferece?</label>
+                <textarea id="descricaoNegocio" name="descricaoNegocio" placeholder="Descreva brevemente seus produtos ou serviços. Ex: 'Bolos e doces caseiros', 'Serviços de encanamento e eletricidade', etc."></textarea>
+            </div>
+            
+            <div class="form-section">
+                <label for="linkNegocio">Link para suas redes sociais ou site:</label>
+                <input type="url" id="linkNegocio" name="linkNegocio" placeholder="Ex: https://instagram.com/seunegocio">
+            </div>
+            
+            <button type="submit">Cadastrar Negócio</button>
+        </form>
+    </div>
+    
+    <div id="confirmacao">
+        <h2>Negócio Cadastrado!</h2>
+        <p>Seu cadastro para o marketplace foi recebido com sucesso. Em breve, entraremos em contato.</p>
+    </div>
+</div>
+
+<script>
+    // Código JavaScript para a funcionalidade do app
+    document.getElementById('formNegocio').addEventListener('submit', function(event) {
+        event.preventDefault(); // Evita que a página seja recarregada
+        
+        // Simula o envio dos dados (os dados não são realmente enviados, é só para demonstração)
+        console.log("Dados do negócio:", {
+            nomeNegocio: document.getElementById('nomeNegocio').value,
+            contatoNegocio: document.getElementById('contatoNegocio').value,
+            descricaoNegocio: document.getElementById('descricaoNegocio').value,
+            linkNegocio: document.getElementById('linkNegocio').value
+        });
+
+        // Esconde o formulário e mostra a mensagem de confirmação
+        document.getElementById('formulario-negocio').style.display = 'none';
+        document.getElementById('confirmacao').style.display = 'block';
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketplace de Reconstrução - Elo Presente</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f7f9f7; /* Fundo suave */
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h1 {
+            color: #2e8b57; /* Verde floresta, remetendo a crescimento */
+            font-size: 2.5em;
+        }
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.1em;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .product-card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s;
+            border-left: 5px solid #f39c12; /* Laranja/Dourado do Marketplace */
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        .product-card h3 {
+            color: #2c3e50;
+            margin: 0 0 5px 0;
+        }
+        .product-card .category {
+            font-size: 0.9em;
+            color: #2ecc71; /* Verde de crescimento */
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .product-card p {
+            font-size: 0.95em;
+            color: #555;
+            flex-grow: 1;
+        }
+        .contact-btn {
+            background-color: #f39c12;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+            margin-top: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+        }
+        .contact-btn:hover {
+            background-color: #e67e22;
+        }
+        .tax-info {
+            font-size: 0.8em;
+            color: #999;
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>Marketplace de Reconstrução</h1>
+    <div class="subtitle">Impulsione a recuperação econômica comprando de negócios locais.</div>
+</div>
+
+<div class="product-grid">
+
+    <div class="product-card">
+        <div class="category">Serviços de Reparo (Encanamento)</div>
+        <h3>Eletro-Hidráulica Martins</h3>
+        <p>Serviços urgentes de encanamento pós-enchente. Orçamento sem compromisso para bairros Florestal e Americano.</p>
+        <a href="#" class="contact-btn">Entrar em Contato</a>
+    </div>
+
+    <div class="product-card">
+        <div class="category">Alimentos e Merenda</div>
+        <h3>Padaria Doce Lar</h3>
+        <p>Pães, bolos e salgados frescos. Aceitamos pedidos grandes para abrigos e pontos de apoio. Entregamos em Lajeado.</p>
+        <a href="#" class="contact-btn">Entrar em Contato</a>
+    </div>
+    
+    <div class="product-card">
+        <div class="category">Móveis Usados e Limpeza</div>
+        <h3>Reforma e Arte</h3>
+        <p>Restauração de móveis danificados e serviços de limpeza pesada (desinfecção) pós-enchente. Orçamento via WhatsApp.</p>
+        <a href="#" class="contact-btn">Entrar em Contato</a>
+    </div>
+
+    <div class="product-card">
+        <div class="category">Moda e Confecção</div>
+        <h3>Costura da Vó Maria</h3>
+        <p>Conserto e confecção de roupas e uniformes escolares. Necessário agendamento devido ao alto volume de pedidos.</p>
+        <a href="#" class="contact-btn">Entrar em Contato</a>
+    </div>
+
+</div>
+
+<div class="tax-info">
+    *Toda transação neste Marketplace contribui com a **Taxa de Reconstrução Ética (T.R.E.)**, garantindo a sustentabilidade da plataforma.
+</div>
+
+</body>
+</html>

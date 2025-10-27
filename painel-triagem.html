@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Triagem - Elo Presente</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f7f3e9; /* Cor de fundo creme para um toque mais suave */
+            color: #4a4a4a;
+            margin: 0;
+            padding: 40px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        h1 {
+            color: #d35400; /* Laranja queimado vibrante */
+            font-size: 2.5em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .pending-requests {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        .request-item {
+            border-bottom: 2px solid #e9e9e9;
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .request-item:last-child {
+            border-bottom: none;
+        }
+        .request-info {
+            text-align: left;
+            flex-grow: 1;
+        }
+        .request-info h3 {
+            margin: 0 0 5px 0;
+            color: #2c3e50; /* Azul escuro sério */
+        }
+        .request-info p {
+            margin: 5px 0;
+            font-size: 0.9em;
+            color: #7f8c8d;
+        }
+        .request-actions {
+            margin-left: 20px;
+        }
+        .approve-button, .reject-button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .approve-button {
+            background-color: #2ecc71; /* Verde vivo */
+            color: white;
+        }
+        .approve-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(46, 204, 113, 0.4);
+        }
+        .empty-state {
+            text-align: center;
+            color: #bdc3c7;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>Painel de Triagem</h1>
+    <p>Pedidos de doação pendentes de aprovação.</p>
+</div>
+
+<div class="pending-requests" id="pending-list">
+    <p class="empty-state">Nenhum pedido de doação pendente.</p>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Simulação de pedidos pendentes
+        const pendingRequests = [
+            { id: 1, nome: "Maria da Silva", contato: "(51) 98765-4321", necessidades: "Alimentos, Roupas", detalhes: "Cesta básica para família de 4 pessoas, roupas de frio para crianças." },
+            { id: 2, nome: "João Fernandes", contato: "joao.f@email.com", necessidades: "Móveis", detalhes: "Precisamos de um colchão de casal e um fogão." }
+        ];
+
+        const pendingList = document.getElementById('pending-list');
+
+        if (pendingRequests.length === 0) {
+            return;
+        }
+
+        document.querySelector('.empty-state').style.display = 'none';
+
+        pendingRequests.forEach(request => {
+            const item = document.createElement('div');
+            item.className = 'request-item';
+            item.innerHTML = `
+                <div class="request-info">
+                    <h3>${request.nome}</h3>
+                    <p><strong>Contato:</strong> ${request.contato}</p>
+                    <p><strong>Precisando de:</strong> ${request.necessidades}</p>
+                    <p><strong>Detalhes:</strong> ${request.detalhes}</p>
+                </div>
+                <div class="request-actions">
+                    <button class="approve-button" onclick="approveRequest(${request.id})">Aprovar</button>
+                </div>
+            `;
+            pendingList.appendChild(item);
+        });
+    });
+
+    function approveRequest(id) {
+        // Simulação de aprovação. Em um sistema real, isso enviaria os dados para o servidor.
+        alert(`Pedido #${id} de doação aprovado!`);
+        // Aqui você adicionaria o código para remover o item da lista
+        // e enviá-lo para o "mural"
+        // (Isso é uma simulação para o pitch, a próxima página é o mural)
+    }
+</script>
+
+</body>
+</html>

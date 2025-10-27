@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oferta de Doação - Elo Presente</title>
+    <style>
+        /* Estilos CSS para o visual do app */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0f2f7; /* Um azul claro suave, complementa o anterior */
+            color: #333;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+        }
+        h1 {
+            color: #1a5276; /* Um azul mais escuro e sério */
+            font-size: 2.2em;
+            margin-bottom: 20px;
+        }
+        .form-section {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 25px;
+            text-align: left;
+        }
+        label {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #555;
+            margin-bottom: 8px;
+        }
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #a9d9e0; /* Borda em tom de azul mais suave */
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 1em;
+        }
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        .checkbox-group label {
+            display: flex;
+            align-items: center;
+            font-weight: normal;
+        }
+        input[type="checkbox"] {
+            transform: scale(1.5);
+            margin-right: 8px;
+        }
+        button {
+            background-color: #28a745; /* Um verde esperança e ação */
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        #confirmacao {
+            display: none;
+            padding: 20px;
+            background-color: #d4edda; /* Verde claro para confirmação */
+            color: #155724; /* Verde escuro para o texto */
+            border: 1px solid #28a745;
+            border-radius: 8px;
+            text-align: center;
+        }
+        #confirmacao h2 {
+            margin-top: 0;
+            color: #155724;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div id="formulario-doacao">
+        <h1>Quer Ajudar?</h1>
+        <p>Preencha este formulário para oferecer sua doação.</p>
+        
+        <form id="formOferta">
+            <div class="form-section">
+                <label for="nomeDoador">Seu Nome:</label>
+                <input type="text" id="nomeDoador" name="nomeDoador" placeholder="Seu nome completo ou da empresa" required>
+            </div>
+            
+            <div class="form-section">
+                <label for="contatoDoador">Seu Contato:</label>
+                <input type="text" id="contatoDoador" name="contatoDoador" placeholder="Telefone ou e-mail" required>
+            </div>
+            
+            <div class="form-section">
+                <label>O que você tem para doar?</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="disponibilidade" value="Alimentos"> Alimentos</label>
+                    <label><input type="checkbox" name="disponibilidade" value="Roupas"> Roupas</label>
+                    <label><input type="checkbox" name="disponibilidade" value="Higiene"> Produtos de Higiene</label>
+                    <label><input type="checkbox" name="disponibilidade" value="Agua"> Água</label>
+                    <label><input type="checkbox" name="disponibilidade" value="Moveis"> Móveis</label>
+                    <label><input type="checkbox" name="disponibilidade" value="Voluntariado"> Voluntariado</label>
+                </div>
+            </div>
+            
+            <div class="form-section">
+                <label for="detalhesDoacao">Descreva sua doação ou como pode ajudar:</label>
+                <textarea id="detalhesDoacao" name="detalhesDoacao" placeholder="Ex: '3 cestas básicas', 'Roupas infantis', 'Disponível para transporte'"></textarea>
+            </div>
+            
+            <button type="submit">Oferecer Doação</button>
+        </form>
+    </div>
+    
+    <div id="confirmacao">
+        <h2>Obrigado por Ajudar!</h2>
+        <p>Sua oferta de doação foi registrada com sucesso.</p>
+        <p>Entraremos em contato para organizar a retirada ou entrega.</p>
+    </div>
+</div>
+
+<script>
+    // Código JavaScript para a funcionalidade do app
+    document.getElementById('formOferta').addEventListener('submit', function(event) {
+        event.preventDefault(); // Evita que a página seja recarregada
+        
+        // Simula o envio dos dados (os dados não são realmente enviados, é só para demonstração)
+        console.log("Dados da oferta:", {
+            nomeDoador: document.getElementById('nomeDoador').value,
+            contatoDoador: document.getElementById('contatoDoador').value,
+            disponibilidades: Array.from(document.querySelectorAll('input[name="disponibilidade"]:checked')).map(cb => cb.value),
+            detalhesDoacao: document.getElementById('detalhesDoacao').value
+        });
+
+        // Esconde o formulário e mostra a mensagem de confirmação
+        document.getElementById('formulario-doacao').style.display = 'none';
+        document.getElementById('confirmacao').style.display = 'block';
+    });
+</script>
+
+</body>
+</html>

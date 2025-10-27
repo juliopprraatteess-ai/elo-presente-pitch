@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mural de Necessidades - Elo Presente</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #e8f9fd; /* Um azul celeste claro */
+            color: #4a4a4a;
+            margin: 0;
+            padding: 40px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        h1 {
+            color: #3498db; /* Azul forte e confiável */
+            font-size: 2.5em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .request-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .request-card {
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .request-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        .request-card h3 {
+            color: #2c3e50;
+            margin: 0 0 10px 0;
+            font-size: 1.5em;
+        }
+        .request-card p {
+            margin: 5px 0;
+            font-size: 0.95em;
+            color: #7f8c8d;
+        }
+        .request-card .contact-button {
+            background-color: #2ecc71; /* Verde para ação */
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 50px;
+            text-align: center;
+            font-weight: bold;
+            text-decoration: none;
+            margin-top: 15px;
+            transition: background-color 0.3s ease;
+        }
+        .request-card .contact-button:hover {
+            background-color: #27ae60;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>Mural de Necessidades</h1>
+    <p>Pedidos de doação que precisam de ajuda.</p>
+</div>
+
+<div class="request-grid" id="request-grid">
+    <div class="request-card">
+        <h3>Alimentos e Roupas</h3>
+        <p><strong>Detalhes:</strong> Cesta básica e roupas de frio para família de 4 pessoas.</p>
+        <p><strong>Bairro:</strong> Florestal</p>
+        <a href="mailto:contato.ong@example.com" class="contact-button">Entrar em Contato</a>
+    </div>
+    <div class="request-card">
+        <h3>Móveis e Utensílios</h3>
+        <p><strong>Detalhes:</strong> Colchão de casal e um fogão para recomeçar em casa.</p>
+        <p><strong>Bairro:</strong> São Bento</p>
+        <a href="mailto:contato.ong@example.com" class="contact-button">Entrar em Contato</a>
+    </div>
+</div>
+
+<script>
+    // Este código JavaScript é uma simulação.
+    // Em um sistema real, essa página buscaria dados de um servidor.
+    // Mas para o seu pitch, ela já demonstra a funcionalidade.
+</script>
+
+</body>
+</html>

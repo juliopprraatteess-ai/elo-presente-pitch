@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voluntários e Parcerias - Elo Presente</title>
+    <style>
+        /* Estilos CSS para o visual do app */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8; /* Fundo cinza-azulado claro, transmite calma e união */
+            color: #4a4a4a;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 650px;
+            text-align: center;
+        }
+        h1 {
+            color: #5d6d7e; /* Azul acinzentado forte, sério e colaborativo */
+            font-size: 2.2em;
+            margin-bottom: 20px;
+        }
+        p {
+            margin-bottom: 25px;
+            font-size: 1.1em;
+            color: #6a6a6a;
+        }
+        .form-section {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 25px;
+            text-align: left;
+        }
+        label {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #555;
+            margin-bottom: 8px;
+        }
+        input[type="text"],
+        input[type="email"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #c0d3e0; /* Borda azul acinzentada suave */
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 1em;
+        }
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        button {
+            background-color: #8e44ad; /* Tom de roxo, simboliza sabedoria e cooperação */
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #9b59b6;
+        }
+        #confirmacao {
+            display: none;
+            padding: 20px;
+            background-color: #e6e6fa; /* Lavanda claro para confirmação */
+            color: #6a5acd; /* Tom de roxo mais escuro */
+            border: 1px solid #8e44ad;
+            border-radius: 8px;
+            text-align: center;
+        }
+        #confirmacao h2 {
+            margin-top: 0;
+            color: #6a5acd;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div id="formulario-voluntario">
+        <h1>Seja um Voluntário ou Parceiro</h1>
+        <p>Junte-se ao Elo Presente e ajude a reconstruir Lajeado!</p>
+        
+        <form id="formParceria">
+            <div class="form-section">
+                <label for="tipoCadastro">Tipo de Cadastro:</label>
+                <select id="tipoCadastro" name="tipoCadastro" required>
+                    <option value="">Selecione...</option>
+                    <option value="voluntario">Pessoa Física (Voluntário)</option>
+                    <option value="organizacao">Organização/Empresa (Parceiro)</option>
+                </select>
+            </div>
+
+            <div class="form-section">
+                <label for="nomeCompleto">Seu Nome / Nome da Organização:</label>
+                <input type="text" id="nomeCompleto" name="nomeCompleto" placeholder="Nome completo ou nome da organização" required>
+            </div>
+            
+            <div class="form-section">
+                <label for="emailContato">E-mail para Contato:</label>
+                <input type="email" id="emailContato" name="emailContato" placeholder="seu.email@exemplo.com" required>
+            </div>
+            
+            <div class="form-section">
+                <label for="telefoneContato">Telefone para Contato (opcional):</label>
+                <input type="text" id="telefoneContato" name="telefoneContato" placeholder="(XX) XXXXX-XXXX">
+            </div>
+            
+            <div class="form-section">
+                <label for="comoAjudar">Como você ou sua organização pode ajudar?</label>
+                <textarea id="comoAjudar" name="comoAjudar" placeholder="Ex: 'Disponível para trabalho voluntário em resgates', 'Ofereço logística para transporte de doações', 'Somos uma ONG de apoio psicológico', etc."></textarea>
+            </div>
+            
+            <button type="submit">Enviar Cadastro</button>
+        </form>
+    </div>
+    
+    <div id="confirmacao">
+        <h2>Cadastro Recebido!</h2>
+        <p>Agradecemos seu interesse em fazer parte do Elo Presente. Entraremos em contato em breve!</p>
+    </div>
+</div>
+
+<script>
+    // Código JavaScript para a funcionalidade do app
+    document.getElementById('formParceria').addEventListener('submit', function(event) {
+        event.preventDefault(); // Evita que a página seja recarregada
+        
+        // Simula o envio dos dados (os dados não são realmente enviados, é só para demonstração)
+        console.log("Dados do Cadastro:", {
+            tipoCadastro: document.getElementById('tipoCadastro').value,
+            nomeCompleto: document.getElementById('nomeCompleto').value,
+            emailContato: document.getElementById('emailContato').value,
+            telefoneContato: document.getElementById('telefoneContato').value,
+            comoAjudar: document.getElementById('comoAjudar').value
+        });
+
+        // Esconde o formulário e mostra a mensagem de confirmação
+        document.getElementById('formulario-voluntario').style.display = 'none';
+        document.getElementById('confirmacao').style.display = 'block';
+    });
+</script>
+
+</body>
+</html>
